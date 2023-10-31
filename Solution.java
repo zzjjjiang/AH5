@@ -4,12 +4,12 @@ import java.util.HashMap;
 class Solution {
     public static char mostFrequentChar(String s) {
         HashMap<Character, Integer> map = new HashMap<>();
-        char ans = 'a';
+        Character ans = 'a';
         for(int i =0;i<s.length();i++) {
-            if (map.containsKey(s.charAt(i))) {
-                map.put(s.charAt(i), map.get(s.charAt(i)) + 1);
+            if (map.containsKey(Character.toLowerCase(s.charAt(i)))) {
+                map.put(Character.toLowerCase(s.charAt(i)), map.get(s.charAt(i)) + 1);
             } else {
-                map.put(s.charAt(i), 1);
+                map.put(Character.toLowerCase(s.charAt(i)), 1);
             }
             int max = -1;
             for (char a : map.keySet()) {
